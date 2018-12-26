@@ -83,6 +83,7 @@ function load() {
           createNewRow(event);
         });
       }
+
       var tdtext = document.createTextNode(i + "," + j);
       span.setAttribute("contenteditable", true);
       span.setAttribute("width", "95");
@@ -112,6 +113,7 @@ function createNewRow(e) {
     if (columns - 1 == i) {
       span.addEventListener("keydown", createNewRow);
     }
+
     span.textContent = "new" + i;
 
     td.appendChild(span);
@@ -172,18 +174,25 @@ function createTdElement() {
 }
 
 function checkLastCell() {
-  var rows = document.getElementsByTagName("tr").length;
+  var lastCell = document.getElementsByTagName("td");
+  var rowsLength = document.getElementsByTagName("tr").length;
 
   var columns = cellCount();
-  console.log("Total Rows-" + rows + " and columns= " + columns);
+  console.log("Total Rows-" + rowsLength + " and columns= " + columns);
 
-  for (var i = 0; i < rows; i++) {
+  for (var i = 0; i < rowsLength; i++) {
     for (var j = 0; j < columns; j++) {
-      if (rows - 1 == i && columns - 1 == j) {
+      if (rowsLength - 1 == i && columns - 1 == j) {
+        var lastCell = lastCell[lastCell.length - 1];
+        // lastCell.children[0].setAttribute("style", "color:red;");
+        lastCell.children[0].addEventListener("keydown", function(event) {
+          createNewRow(event);
+        });
       }
     }
   }
 }
+
 /* 
 functions to implement
 
