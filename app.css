@@ -1,0 +1,14 @@
+h1 {
+  text-align: right;
+  color: brown;
+}
+
+.headingDiv h3 {
+  text-align: center;
+  color: red;
+}
+
+.headingDiv h1 {
+  text-align: center;
+  color: blueviolet;
+}
