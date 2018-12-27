@@ -176,7 +176,6 @@ function createTdElement() {
 function checkLastCell() {
   var lastCell = document.getElementsByTagName("td");
   var rowsLength = document.getElementsByTagName("tr").length;
-
   var columns = cellCount();
   console.log("Total Rows-" + rowsLength + " and columns= " + columns);
 
